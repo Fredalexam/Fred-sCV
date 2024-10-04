@@ -120,4 +120,25 @@ header h1 {
 .btn-download:hover {
     background-color: #218838;
 }
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    header, footer {
+        display: none; /* Oculta cabeçalho e rodapé no PDF */
+    }
+
+    section {
+        page-break-after: always; /* Força uma quebra de página após cada seção */
+    }
+
+    .btn-download {
+        display: none; /* Oculta o botão de download no PDF */
+    }
+
+    /* Ajuste outros estilos conforme necessário para a impressão */
+}
+
 

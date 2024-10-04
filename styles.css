@@ -104,3 +104,20 @@ header h1 {
         font-size: 0.9em;
     }
 }
+.btn-download {
+    background-color: #28a745; /* Cor verde apelativa */
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.btn-download:hover {
+    background-color: #218838;
+}
+

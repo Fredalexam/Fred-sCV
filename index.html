@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículo - Fred Martins</title>
@@ -100,7 +101,22 @@
     </section>
 
     <footer>
+        <button id="download-btn" class="btn-download">Descarregar Currículo em PDF</button>
         <p>Encontre-me em <a href="https://www.linkedin.com/in/fred-martins-54b630206/">Linkedin</a> | <a <a href="mailto:fred.alexandre2000@hotmail.com">Enviar Email</a> <a href="tel:+351910712014">Ligar</a> </p>
     </footer>
+    <script>
+    document.getElementById('download-btn').addEventListener('click', function () {
+        var element = document.body; // Define o corpo da página como conteúdo a ser convertido em PDF
+        var opt = {
+            margin:       0.5,        // Margens no PDF
+            filename:     'Curriculo-Fred-Martins.pdf', // Nome do arquivo PDF
+            image:        { type: 'jpeg', quality: 0.98 }, // Qualidade das imagens
+            html2canvas:  { scale: 2 }, // Melhora a qualidade ao dobrar a escala
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' } // Formato do PDF (carta)
+        };
+        html2pdf().from(element).set(opt).save(); // Gera e faz o download do PDF
+    });
+</script>
+
 </body>
 </html>

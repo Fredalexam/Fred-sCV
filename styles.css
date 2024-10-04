@@ -1,4 +1,8 @@
 /* Estilos gerais para desktop */
+* {
+    word-wrap: break-word; /* Permite que as palavras quebras se necessário */
+    overflow-wrap: break-word; /* Para compatibilidade com navegadores */
+}
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f0f2f5;

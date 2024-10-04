@@ -111,7 +111,7 @@
             margin:       0.5,        // Margens no PDF
             filename:     'Curriculo-Fred-Martins.pdf', // Nome do arquivo PDF
             image:        { type: 'jpeg', quality: 0.98 }, // Qualidade das imagens
-            html2canvas:  { scale: 2 }, // Melhora a qualidade ao dobrar a escala
+            html2canvas:  { scale: 2, useCORS: true }, // Melhora a qualidade ao dobrar a escala
             jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' } // Formato do PDF (carta)
         };
 

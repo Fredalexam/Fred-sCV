@@ -104,7 +104,7 @@
         <button id="download-btn" class="btn-download">Descarregar Currículo em PDF</button>
         <p>Encontre-me em <a href="https://www.linkedin.com/in/fred-martins-54b630206/">Linkedin</a> | <a <a href="mailto:fred.alexandre2000@hotmail.com">Enviar Email</a> <a href="tel:+351910712014">Ligar</a> </p>
     </footer>
-    <script>
+  <script>
     document.getElementById('download-btn').addEventListener('click', function () {
         var element = document.body; // Define o corpo da página como conteúdo a ser convertido em PDF
         var opt = {
@@ -114,9 +114,17 @@
             html2canvas:  { scale: 2 }, // Melhora a qualidade ao dobrar a escala
             jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' } // Formato do PDF (carta)
         };
-        html2pdf().from(element).set(opt).save(); // Gera e faz o download do PDF
+
+        // Oculta o botão antes de gerar o PDF
+        document.getElementById('download-btn').style.display = 'none';
+
+        html2pdf().from(element).set(opt).save().then(() => {
+            // Mostra o botão novamente após a geração do PDF
+            document.getElementById('download-btn').style.display = 'inline-block';
+        });
     });
 </script>
+
 
 </body>
 </html>
